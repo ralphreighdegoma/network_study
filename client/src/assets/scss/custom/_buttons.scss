@@ -1,0 +1,15 @@
+//
+// Button
+//
+
+@import "../core/buttons/button";
+@import "../core/buttons/button-icon";
+@import "../core/buttons/button-brand";
+
+.btn {
+    border-radius: 100px;
+}
+.btn-default {
+    background-color: #595959 !important; 
+    border: 1px solid #595959 !important;
+}

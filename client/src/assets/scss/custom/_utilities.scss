@@ -1,0 +1,478 @@
+//
+// Utilities
+//
+
+@import "../core/utilities/backgrounds";
+@import "../core/utilities/floating";
+@import "../core/utilities/helper";
+@import "../core/utilities/image";
+@import "../core/utilities/opacity";
+@import "../core/utilities/overflow";
+@import "../core/utilities/position";
+@import "../core/utilities/sizing";
+@import "../core/utilities/spacing";
+@import "../core/utilities/shadows";
+@import "../core/utilities/text";
+@import "../core/utilities/transform";
+
+
+.product-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .product-uploader .el-upload:hover {
+    border-color: $primary;
+  }
+
+  .el-upload--picture-card:hover, .el-upload:focus {
+    border-color: $primary !important;
+    color: $primary !important;
+  }
+
+  .product-admin-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .admin-icon {
+    font-size: 20px;
+  }
+
+  .product {
+    margin-right: 15px;
+    background-color: #fff !important;
+    &__featureImage {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &--overlay {
+        position: absolute; 
+        bottom: 0; 
+        background: #fff;
+        border-radius: 10px;;
+        width: auto;
+        padding: 15px 10px;
+        margin: 20px;
+        transition: .5s ease;
+        font-size: 20px;
+        text-align: center;
+        box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+        &__images {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            border: 2px solid transparent;
+            cursor: pointer;
+            height: 70px;
+            width: 70px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0px 10px;
+            transition: all .2s ease-in-out;
+            &:hover {
+              border: 2px solid $primary;
+            }
+          }
+        }
+      }
+    }
+    &__info {
+        height: 100vh;
+        &--title {
+          font-size: 30px;
+          font-weight: 800;
+        }
+        &--description {
+          color: $gray-600 !important;
+        }
+
+        &--price {
+          font-size: 22px;
+          font-weight: 500;
+
+        }
+    }
+  }
+
+  .products {
+    &__featureImage {
+      width: 100%;
+      padding: 0px 30px;
+
+      &__img {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        box-shadow: 0 15px 35px 10px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.17);
+        .wrap {
+          width: 100%;
+          height: 188px;
+          position: absolute;
+          top: -8px;
+          left: 8px;
+          overflow: hidden;
+        }
+        .wrap:before, .wrap:after {
+          content: ""; 
+          position: absolute;
+        }
+        .wrap:before {
+          width: 40px;
+          height: 8px;
+          right: 100px;
+          background: #4D6530;
+          border-radius: 8px 8px 0px 0px;
+        }
+        .wrap:after {
+          width: 8px;
+          height: 40px;
+          right: 0px;
+          top: 100px;
+          background: #4D6530;
+          border-radius: 0px 8px 8px 0px;
+        }
+        .ribbon6 {
+          width: 200px;
+          height: 40px;
+          line-height: 40px;
+          position: absolute;
+          top: 30px;
+          right: -50px;
+          font-size: 14px;
+          z-index: 2;
+          overflow: hidden;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          border: 1px dashed;
+          box-shadow:0 0 0 3px #57DD43,  0px 21px 5px -18px rgba(0,0,0,0.6);
+          background: #57DD43;
+          text-align: center;
+        }
+      
+      }
+
+      
+    }
+    h4{
+      text-transform: capitalize;
+    }
+  }
+
+
+  .checkout {
+    label {
+      font-size: 13px !important;
+    }
+    .table {
+
+        th {
+            padding: 1rem;
+        }
+
+        td {
+            padding: 1rem;
+        }
+        
+        thead {
+            th {
+                border-bottom: 1px solid #dee2e6;
+                border-top: none;
+            }
+        }
+    
+        tbody {
+            
+            border-bottom: 1px solid #dee2e6;
+            border-top: none;
+        }
+    
+        tfoot {
+            th {
+                border-bottom: none;
+                border-top: none;
+            }
+            td {
+                border-bottom: none;
+                border-top: none;
+            }
+        }
+    }
+}
+
+.order_detail {
+  margin-top: 5px;
+  padding: 0px 40px 40px;
+}
+
+.product-checkout {
+  margin-top: 1.5rem;
+  &--img {
+    img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+    }
+  }
+  &__img {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 15px 35px 10px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.17);
+    .wrap {
+      width: 100%;
+      height: 188px;
+      position: absolute;
+      top: -8px;
+      left: 8px;
+      overflow: hidden;
+    }
+    .wrap:before, .wrap:after {
+      content: ""; 
+      position: absolute;
+    }
+    .wrap:before {
+      width: 40px;
+      height: 8px;
+      right: 100px;
+      background: #4D6530;
+      border-radius: 8px 8px 0px 0px;
+    }
+    .wrap:after {
+      width: 8px;
+      height: 40px;
+      right: 0px;
+      top: 100px;
+      background: #4D6530;
+      border-radius: 0px 8px 8px 0px;
+    }
+    .ribbon6 {
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+      position: absolute;
+      top: 30px;
+      right: -50px;
+      font-size: 14px;
+      z-index: 2;
+      overflow: hidden;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      border: 1px dashed;
+      box-shadow:0 0 0 3px #57DD43,  0px 21px 5px -18px rgba(0,0,0,0.6);
+      background: #57DD43;
+      text-align: center;
+    }
+  
+  }
+  &__info {
+    text-align: center;
+    margin-top: 2rem;
+    h4 {
+      font-size: 16px;
+    }
+  }
+}
+
+.company-logo {
+  width: 120px;
+}
+
+.avatar {
+  width: 30px !important;
+  height: 30px !important;
+  img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50%;
+    object-fit: cover
+  }
+}
+
+.navbar-vertical .navbar-brand-img, .navbar-vertical .navbar-brand > img {
+  max-width: 60% !important;
+  max-height: 60% !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-vertical .navbar-brand-img, .navbar-vertical .navbar-brand > img {
+      max-width: 100%!important;
+      max-height: 3rem!important;
+  }
+}
+.navbar-vertical .navbar-collapse:before {
+  margin: 0rem !important;
+}
+.referral-code {
+  padding: 10px 25px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: $gray-200;
+}
+
+.referral-code-link {
+  padding: 5px 20px;
+  width: 500px;
+  border-radius: 100px;
+  font-size: 15px;
+  color: #32325d;
+  font-weight: 500;
+  background-color: $gray-200;
+}
+
+.el-collapse  {
+  border: none !important;
+  &-item {
+    border-radius: 10px !important;
+    border: 2px solid transparent;
+    margin: 15px;
+    padding: 10px 20px;
+    background-color: #fff!important;
+    box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+    &__header {
+      background-color: #fff!important;
+      border: none !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+    }
+  }
+}
+
+.el-collapse-item.is-active {
+  border: 2px solid $primary !important;
+}
+
+.order-success {
+  &--img {
+    width: 100%;
+  }
+  &--title {
+    font-size: 27px;
+    font-weight: 700;
+  }
+  &--text {
+    font-weight: 500;
+    padding: 0px 50px
+  } 
+}
+
+.product-order {
+  &__img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  &__info {
+      margin-left: 20px;
+  }
+}
+
+.el-tree-node__content {
+  height: 40px !important;
+  margin: 10px 0px;
+  &:hover {
+    background-color: transparent !important;
+  }
+  &:focus {
+    background-color: transparent !important;
+  }
+}
+.el-tree {
+  background-color: transparent !important;
+  &-node__label {
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    background-color: #fff;
+    // box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
+    padding: 10px 15px;
+    width: 100%;
+    &:hover {
+      border: 1px solid $primary;
+    }
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+  
+  
+  
+}
+
+.el-tree-node__content>.el-tree-node__expand-icon {
+  border-radius: 100%;
+  padding: 4px !important;
+  background-color: $primary;
+  color: #fff;
+  margin: 10px;
+}
+
+.el-tree-node__expand-icon.is-leaf {
+  background-color: transparent;
+}
+
+.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content .el-tree-node__label {
+  border: 1px solid $primary;
+}
+.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+  background-color: transparent !important;
+}
+
+.table {
+  &__complete {
+    background-color: rgba($success, 0.1) !important;
+    &--text {
+      color: $success;
+    }
+  }
+  &__pending {
+    background-color: rgba($warning, 0.1) !important;
+    &--text {
+      color: $warning;
+    }
+  }
+  &__process {
+    background-color: rgba($info, 0.1) !important;
+    &--text {
+      color: $info;
+    }
+  }
+  &__reject {
+    background-color: rgba($danger, 0.1) !important;
+    &--text {
+      color: $danger;
+    }
+  }
+  &__refund {
+    background-color: rgba($default, 0.1) !important;
+    &--text {
+      color: $default;
+    }
+  }
+  &__withdraw {
+    background-color: rgba($dark, 0.1) !important;
+    &--text {
+      color: $dark;
+    }
+  }
+}
